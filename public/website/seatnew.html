@@ -29,45 +29,39 @@
     <div class="container">
       <div class="register service">
         <div class="service_text">
-          <h2>Sign up</h2>
-          <p>Welcome to Seatify</p>
-        </div>
-
-        <div class="social">
-          <a href="#">
-            <div class="btn facebook">
-              SIGN UP with FACEBOOK
-            </div>
-          </a>
-          <a href="#">
-            <div class="btn twitter">
-              SIGN UP with TWITTER
-            </div>
-          </a>
-        </div>
-
-        <div class="or">
-          OR
+          <h2>Share a Table</h2>
         </div>
 
         <form>
           <div class="form-group">
-            <label>Name</label>
-            <input type="name" class="form-control" placeholder="Enter name">
+            <label>Place Name</label>
+            <input type="place_name" class="form-control" placeholder="Enter place name">
           </div>
           <div class="form-group">
-            <label>Email address</label>
-            <input type="email" class="form-control" placeholder="Enter email">
+            <label>Place URL</label>
+            <input type="place_url" class="form-control" placeholder="Enter tabelog or official URL">
           </div>
           <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" placeholder="Enter password">
+            <label>Address</label>
+            <input type="address" class="form-control" placeholder="Enter address">
           </div>
           <div class="form-group">
-            <label>Password Confirmation</label>
-            <input type="password" class="form-control" placeholder="Enter password confirmation">
+            <label>Price</label>
+            <input type="price" class="form-control" placeholder="Enter price, FREE is okay:)" value="100yen">
           </div>
-          <button type="submit" class="btn submit">SIGN UP</button>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input">
+              Available Wifi
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input">
+              Available Charge
+            </label>
+          </div>
+          <button type="submit" class="btn submit">POST A SEAT</button>
         </form>
       </div>
       <!-- /register -->
