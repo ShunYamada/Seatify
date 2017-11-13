@@ -9,9 +9,11 @@
 
     <div class="social">
       <a href="#">
-        <div class="btn facebook">
-          SIGN IN with FACEBOOK
-        </div>
+        <%= link_to user_facebook_omniauth_authorize_path do %>
+          <div class="btn facebook">
+            SIGN IN with FACEBOOK
+          </div>
+        <% end %>
       </a>
       <%= link_to user_twitter_omniauth_authorize_path do %>
         <div class="btn twitter">
