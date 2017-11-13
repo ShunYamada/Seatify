@@ -29,14 +29,12 @@
       </div>
       <div class="form-check">
         <label class="form-check-label">
-          <input type="checkbox" class="form-check-input">
-          Available Wifi
+          <%= f.check_box :wifi, {:checked => false}, :on, :off %> Available WiFi
         </label>
       </div>
       <div class="form-check">
         <label class="form-check-label">
-          <input type="checkbox" class="form-check-input">
-          Available Charge
+          <%= f.check_box :charge, {:checked => false}, :on, :off %> Available Charge
         </label>
       </div>
       <%= f.submit "POST A SEAT", class: "btn submit" %>

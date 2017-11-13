@@ -23,10 +23,12 @@
       Get a seat for <span><%= seat.price %></span>
     </div>
     <div class="amenity list">
-      <span class="wifi on">wifi</span><span class="charge off">charge</span>
+      <span class="wifi <%= seat.wifi %>">wifi</span><span class="charge <%= seat.charge %>">charge</span>
     </div>
     <div class="photo">
+      <% if seat.image? %>
         <%= image_tag seat.image %>
+      <% end %>
     </div>
   </div>
   <div class="item_btn">
