@@ -30,4 +30,10 @@ class User < ApplicationRecord
        User.create_unique_string + "@example.com"
      end
    end
+
+   private
+
+   def user_params
+    params.require(:user).permit(:name, :email, :image, :occupation, :description)
+   end
 end

@@ -6,22 +6,24 @@
       <img src="./img/shun_icon.png" />
     </div>
     <div class="basic_info">
-      <h2>Shun Yamada</h2>
-      <p>Silicon Valley's Freerider</p>
+      <h2><%= @user.name %></h2>
+      <p><%= @user.occupation %></p>
       <div class="description">
-        Hey, what's up guys! I'm Shun, freerider. I run my own business and curious about tech and learnng English and programming.
+        <%= @user.description %>
       </div>
-      <a href="#">
-        <div class="btn edit_btn">
-          EDIT PROFILE
-        </div>
-      </a>
+      <% if @user == current_user %>
+        <%= link_to edit_user_registration_path do %>
+          <div class="btn edit_btn">
+            EDIT PROFILE
+          </div>
+        <% end %>
+      <% end %>
     </div>
   </div>
   <!-- /profile -->
 
   <div class="get_seat">
-    <h1>Get Shun Yamada's seat!</h1>
+    <h1>Get <%= @user.name %>'s seat!</h1>
 
     <div class="contents">
       <div class="item">

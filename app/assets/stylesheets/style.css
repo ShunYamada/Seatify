@@ -47,6 +47,12 @@ body {
   background: #5b84ff;
   width: 100%;
 }
+.edit_btn {
+  margin-top: 10px;
+  padding: 7px 0;
+  background: #666666;
+  width: 100%;
+}
 .request_btn {
   margin-top: 10px;
   padding: 7px 0;
