@@ -6,20 +6,25 @@
 <!-- /header -->
 
 <div class="container">
-  <%= link_to new_user_session_path do %>
-    <div class="btn become_host">
-      BECOME HOST
-    </div>
-  <% end %>
-  <!-- /become_host -->
-
-  <!--
-  <a href="#">
+  <% if user_signed_in? %>
+    <%= link_to new_seat_path do %>
     <div class="btn give_seat">
       GIVE A SEAT
     </div>
-  </a>
-  /give_seat -->
+    <% end %>
+
+    <%= link_to current_user do %>
+    <div class="btn show_profile">
+      SHOW PROFILE
+    </div>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path do %>
+      <div class="btn become_host">
+        BECOME HOST
+      </div>
+    <% end %>
+  <% end %>
 
   <div class="find_seat">
     <h1>How it works</h1>
@@ -44,7 +49,9 @@
     <h1>Let's get a seat!</h1>
 
     <div class="contents">
-      
+      <div class="contents">
+        <%= render @seats %>
+      </div>
     </div>
   </div>
 

@@ -1,19 +1,23 @@
 <div class="item" id="seat-<%= seat.id %>">
   <div class="item_head">
     <div class="icon">
-      <%= image_tag seat.user.image %>
+      <% if seat.user.image.blank? %>
+        <%= image_tag "user.png" %>
+      <% else %>
+        <%= image_tag seat.user.image %>
+      <% end %>
     </div>
     <ul class="info">
-      <li><%= link_to seat.name, seat.url %></li>
+      <li><%= link_to seat.name, seat.url, target: "_blank" %></li>
       <li><%= link_to seat.user.name, seat.user %></li>
     </ul>
   </div>
   <div class="item_body">
     <div class="date list">
-      <img src="./img/date.png" /><%= seat.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+      <%= image_tag "date.png" %><%= seat.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
     </div>
     <div class="address list">
-      <img src="./img/place.png" /><%= seat.address %>
+      <%= image_tag "place.png" %><%= seat.address %>
     </div>
     <div class="price list">
       Get a seat for <span><%= seat.price %></span>
@@ -26,10 +30,10 @@
     </div>
   </div>
   <div class="item_btn">
-    <%= link_to seat.user.sms do %>
+    <a href="sms:<%= seat.user.sms %>">
       <div class="btn request_btn">
         REQUEST A SEAT
       </div>
-    <% end %>
+    </a>
   </div>
 </div>

@@ -46,6 +46,11 @@ body {
 .give_seat {
   background: #5b84ff;
   width: 100%;
+  margin-bottom: 15px;
+}
+.show_profile {
+  color: #5b84ff;
+  border: 2px solid #5b84ff !important;
 }
 .edit_btn {
   margin-top: 10px;

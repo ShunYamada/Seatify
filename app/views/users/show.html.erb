@@ -3,7 +3,11 @@
 <div class="container">
   <div class="profile">
     <div class="image">
-      <%= image_tag @user.image %>
+      <% if @user.image.blank? %>
+        <%= image_tag "user.png" %>
+      <% else %>
+        <%= image_tag @user.image %>
+      <% end %>
     </div>
     <div class="basic_info">
       <h2><%= @user.name %></h2>
