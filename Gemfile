@@ -13,6 +13,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'dotenv-rails'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
