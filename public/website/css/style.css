@@ -123,6 +123,14 @@ body {
   margin-right: 10px;
   border-radius: 5px;
 }
+.photo {
+  margin-top: 10px;
+}
+.photo img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
 .on {
   background: #3366ff;
 }

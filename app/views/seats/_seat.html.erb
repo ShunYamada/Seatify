@@ -1,0 +1,35 @@
+<div class="item" id="seat-<%= seat.id %>">
+  <div class="item_head">
+    <div class="icon">
+      <%= image_tag seat.user.image %>
+    </div>
+    <ul class="info">
+      <li><%= link_to seat.name, seat.url %></li>
+      <li><%= link_to seat.user.name, seat.user %></li>
+    </ul>
+  </div>
+  <div class="item_body">
+    <div class="date list">
+      <img src="./img/date.png" /><%= seat.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+    </div>
+    <div class="address list">
+      <img src="./img/place.png" /><%= seat.address %>
+    </div>
+    <div class="price list">
+      Get a seat for <span><%= seat.price %></span>
+    </div>
+    <div class="amenity list">
+      <span class="wifi on">wifi</span><span class="charge off">charge</span>
+    </div>
+    <div class="photo">
+        <%= image_tag seat.image %>
+    </div>
+  </div>
+  <div class="item_btn">
+    <%= link_to seat.user.sms do %>
+      <div class="btn request_btn">
+        REQUEST A SEAT
+      </div>
+    <% end %>
+  </div>
+</div>

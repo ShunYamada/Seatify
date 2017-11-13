@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   }
   resources :users, only: [:show] do
   end
+  resources :seats, only: [:new, :create, :destroy] do
+  end
 end

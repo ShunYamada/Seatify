@@ -1,0 +1,45 @@
+<% provide(:title, "Make a Seat") %>
+<%= render 'layouts/header' %>
+<div class="container">
+  <div class="register service">
+    <div class="service_text">
+      <h2>Make a Seat</h2>
+    </div>
+
+    <%= form_for(@seat) do |f| %>
+      <div class="form-group">
+        <label>Place Name</label>
+        <%= f.text_field :name, class: "form-control", autofocus: true, placeholder: "Enter place name" %>
+      </div>
+      <div class="form-group">
+        <label>Place URL</label>
+        <%= f.text_field :url, class: "form-control", autofocus: true, placeholder: "Enter tabelog or official URL" %>
+      </div>
+      <div class="form-group">
+        <label>Place Name</label>
+        <%= f.text_field :address, class: "form-control", autofocus: true, placeholder: "Enter place's address" %>
+      </div>
+      <div class="form-group">
+        <label>Price</label>
+        <%= f.text_field :price, class: "form-control", autofocus: true, placeholder: "Enter price, FREE is okay:)", vaule: "100yen" %>
+      </div>
+      <div class="form-group">
+        <label>Seat image input</label>
+        <%= f.file_field :image, class: "form-control-file" %>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input">
+          Available Wifi
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input">
+          Available Charge
+        </label>
+      </div>
+      <%= f.submit "POST A SEAT", class: "btn submit" %>
+    <% end %>
+  </div>
+</div>
