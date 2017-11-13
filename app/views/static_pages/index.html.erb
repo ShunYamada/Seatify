@@ -1,16 +1,16 @@
 <% provide(:title, "Home") %>
 <div class="home_header">
   <h1>Seatify</h1>
-  <p>To solve no vacanct tables, get a seat soon!</p>
+  <p>To solve no vacant tables, get a seat soon!</p>
 </div>
 <!-- /header -->
 
 <div class="container">
-  <a href="#">
+  <%= link_to new_user_session_path do %>
     <div class="btn become_host">
       BECOME HOST
     </div>
-  </a>
+  <% end %>
   <!-- /become_host -->
 
   <!--
@@ -19,7 +19,7 @@
       GIVE A SEAT
     </div>
   </a>
-  <!-- /give_seat -->
+  /give_seat -->
 
   <div class="find_seat">
     <h1>How it works</h1>
@@ -83,9 +83,3 @@
   <!-- /get_seat -->
 
 </div>
-<!-- /container -->
-
-<div class="footer">
-  ©️ <a href="https://gociao.com" target="_blank">Ciao Technologies, Inc</a>
-</div>
-<!-- /footer -->

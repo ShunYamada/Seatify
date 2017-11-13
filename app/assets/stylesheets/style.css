@@ -169,6 +169,15 @@ form {
   background: #3366ff;
 }
 
+.alert {
+  margin-top: 15px;
+}
+.alert-alert {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
 @media screen and (max-width:600px) {
   .find_menu {
     flex-direction: column;
