@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171113091922) do
+ActiveRecord::Schema.define(version: 20171113101158) do
 
   create_table "seats", force: :cascade do |t|
     t.string "name"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20171113091922) do
     t.string "occupation"
     t.text "description"
     t.string "image"
+    t.string "admin"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
