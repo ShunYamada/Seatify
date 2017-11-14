@@ -1,0 +1,7 @@
+en:
+  meta_tags:
+    defaults:
+      site: 'Seatify'
+      description: 'To solve no vacant tables, get a seat soon.'
+      keywords: 'cafe, wifi, charge'
+      title: 'Seatify'

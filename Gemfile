@@ -17,6 +17,7 @@ gem 'carrierwave'
 gem 'rails_admin'
 gem 'cancan'
 gem 'fog'
+gem 'meta-tags'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
