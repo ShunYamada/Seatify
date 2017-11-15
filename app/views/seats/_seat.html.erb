@@ -14,7 +14,7 @@
   </div>
   <div class="item_body">
     <div class="date list">
-      <%= image_tag "date.png" %><%= seat.created_at.strftime('%Y/%m/%d %S:%M:%H') %>
+      <%= image_tag "date.png" %><%= seat.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
     </div>
     <div class="address list">
       <%= image_tag "place.png" %><%= seat.address %>
@@ -32,10 +32,21 @@
     </div>
   </div>
   <div class="item_btn">
+    <% if seat.close === true %>
+    <div class="btn closed_btn">
+      ALREADY CLOSED
+    </div>
+    <% else %>
     <a href="sms:<%= seat.user.sms %>">
       <div class="btn request_btn">
         REQUEST A SEAT
       </div>
     </a>
+    <% end %>
+    <% if seat.user === current_user %>
+    <div class="delete">
+    <%= link_to "Delete", seat, method: :delete, data: { confirm: "Are you delete a seat?" } %>
+    </div>
+    <% end %>
   </div>
 </div>
