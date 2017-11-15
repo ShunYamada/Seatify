@@ -6,8 +6,6 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
   }
-  resources :users, only: [:show] do
-  end
-  resources :seats, only: [:new, :create, :destroy] do
-  end
+  resources :users, only: [:show]
+  resources :seats
 end

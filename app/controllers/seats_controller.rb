@@ -1,10 +1,14 @@
 class SeatsController < ApplicationController
+  before_action :set_seat, only: [:show, :destroy]
   def new
     if signed_in?
       @seat = current_user.seats.build
     else
       redirect_to new_user_registration_path
     end
+  end
+
+  def show
   end
 
   def create
@@ -25,6 +29,10 @@ class SeatsController < ApplicationController
   end
 
   private
+
+  def set_seat
+    @seat = Seat.find(params[:id])
+  end
 
   def create_params
     params.require(:seat).permit(:id, :name, :url, :address, :price, :user_id, :image, :wifi, :charge)

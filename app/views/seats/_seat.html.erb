@@ -45,7 +45,7 @@
     <% end %>
     <% if seat.user === current_user %>
     <div class="delete">
-    <%= link_to "Delete", seat, method: :delete, data: { confirm: "Are you delete a seat?" } %>
+      <%= link_to "delete", seat, method: :delete, data: { confirm: "You sure?" } %>
     </div>
     <% end %>
   </div>
