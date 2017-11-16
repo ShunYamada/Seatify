@@ -5,7 +5,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable
-         
+
   mount_uploader :image, ImagesUploader
 
    class << self
@@ -37,6 +37,6 @@ class User < ApplicationRecord
    private
 
    def user_params
-    params.require(:user).permit(:name, :email, :image, :occupation, :description)
+    params.require(:user).permit(:name, :email, :image, :sms, :occupation, :description)
    end
 end
