@@ -218,6 +218,14 @@ form {
     border-color: #c3e6cb;
 }
 
+.area_mark {
+  font-weight: bold;
+}
+.required_mark {
+  font-weight: bold;
+  color: #ff3366;
+}
+
 @media screen and (max-width:600px) {
   .find_menu {
     flex-direction: column;
