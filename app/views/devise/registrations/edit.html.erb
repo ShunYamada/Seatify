@@ -9,11 +9,11 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
       <div class="form-group">
-        <%= f.label :name %>お名前<br />
+        <label>お名前</label>
         <%= f.text_field :name, class: "form-control", autofocus: true, placeholder: "Enter full name" %>
       </div>
       <div class="form-group">
-        <%= f.label :email %>メールアドレス<br />
+        <label>メールアドレス</label>
         <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: "Enter email" %>
       </div>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -28,11 +28,11 @@
         <%= f.file_field :image, class: "form-control-file" %>
       </div>
       <div class="form-group">
-        <%= f.label :occupation %>肩書き、キャッチフレーズ<br />
+        <label>肩書き、キャッチフレーズ</label>
         <%= f.text_field :occupation, class: "form-control", autofocus: true, placeholder: "Enter occupation" %>
       </div>
       <div class="form-group">
-        <%= f.label :description %>簡単な自己紹介<br />
+        <label>簡単な自己紹介</label>
         <%= f.text_area :description, class: "form-control", autofocus: true, placeholder: "Enter description" %>
       </div>
       <%= f.submit "更新する", class: "btn submit" %>
