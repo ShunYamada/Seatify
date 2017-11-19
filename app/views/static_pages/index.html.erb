@@ -2,8 +2,12 @@
 <div class="home_header">
   <div class="container">
     <h1>Seatify</h1>
+    <!--
     <p>To solve no vacant tables, get a seat soon!
       Currently Seatify works in <span class="area_mark">Roppongi - Akasaka</span> area mainly.</p>
+    -->
+    <p>Seatifyはカフェやオフィスの空いている席を個人で売買できるサービスです。
+      現在は<span class="area_mark">六本木、赤坂エリア</span>で主に展開しています。</p>
   </div>
 </div>
 <!-- /header -->
@@ -12,19 +16,28 @@
   <% if user_signed_in? %>
     <%= link_to new_seat_path do %>
     <div class="btn give_seat">
+      <!--
       GIVE A SEAT
+      -->
+      席を作成する
     </div>
     <% end %>
 
     <%= link_to current_user do %>
     <div class="btn show_profile">
+      <!--
       SHOW PROFILE
+      -->
+      プロフィールへ
     </div>
     <% end %>
   <% else %>
     <%= link_to new_user_session_path do %>
       <div class="btn become_host">
+        <!--
         BECOME HOST
+        -->
+        ログインへ
       </div>
     <% end %>
   <% end %>
@@ -33,16 +46,28 @@
     <h1>How it works</h1>
     <div class="find_menu">
       <div class="find_item">
+        <!--
         <h2>1. Find a seat</h2>
         <p>All seats are available.</p>
+        -->
+        <h2>1. 席を探す</h2>
+        <p>全ての席が予約可能となっています。</p>
       </div>
       <div class="find_item">
+        <!--
         <h2>2. Request a seat</h2>
         <p>Send SMS to host of a seat.</p>
+        -->
+        <h2>2. 席を予約します</h2>
+        <p>「予約する」ボタンからホストにSMSを送ります</p>
       </div>
       <div class="find_item">
-        <h2>2. Get a seat</h2>
+        <!--
+        <h2>3. Get a seat</h2>
         <p>Sharing a table socially.</p>
+        -->
+        <h2>3. 席に座ります</h2>
+        <p>予約した席へ向かい、相席を楽しみましょう</p>
       </div>
     </div>
   </div>

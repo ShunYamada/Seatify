@@ -23,7 +23,7 @@
       Get a seat for <span><%= seat.price %></span>
     </div>
     <div class="amenity list">
-      <span class="wifi <%= seat.wifi %>">wifi</span><span class="charge <%= seat.charge %>">charge</span>
+      <span class="wifi <%= seat.wifi %>">wifi</span><span class="charge <%= seat.charge %>">電源</span>
     </div>
     <div class="photo">
       <% if seat.image? %>
@@ -34,12 +34,12 @@
   <div class="item_btn">
     <% if seat.close === true %>
     <div class="btn closed_btn">
-      ALREADY CLOSED
+      販売終了
     </div>
     <% else %>
     <a href="sms:<%= seat.user.sms %>">
       <div class="btn request_btn">
-        REQUEST A SEAT
+        席を予約する
       </div>
     </a>
     <% end %>

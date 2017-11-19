@@ -3,48 +3,50 @@
 <div class="container">
   <div class="register service">
     <div class="service_text">
-      <h2>Make a Seat</h2>
-      <p><span class="required_mark">*</span> is required.</p>
+      <h2>席を作成する</h2>
+      <p><span class="required_mark">*</span> は必須項目です。</p>
     </div>
 
     <%= form_for(@seat) do |f| %>
+      <!--
       <%= f.fields_for :user do |i| %>
         <div class="form-group">
-          <label>Your SMS <span class="required_mark">*</span></label>
+          <label>利用可能なSMS <span class="required_mark">*</span></label>
           <%= i.text_field :sms, class: "form-control", autofocus: true, placeholder: "Enter SMS(Phone Number)" %>
         </div>
       <% end %>
+      -->
       <div class="form-group">
-        <label>Place Name <span class="required_mark">*</span></label>
+        <label>施設の名前 <span class="required_mark">*</span></label>
         <%= f.text_field :name, class: "form-control", autofocus: true, placeholder: "Enter place name" %>
       </div>
       <div class="form-group">
-        <label>Place URL</label>
+        <label>施設のURL、食べログ </label>
         <%= f.text_field :url, class: "form-control", autofocus: true, placeholder: "Enter tabelog or official URL" %>
       </div>
       <div class="form-group">
-        <label>Place Address</label>
+        <label>施設の住所</label>
         <%= f.text_field :address, class: "form-control", autofocus: true, placeholder: "Enter place's address" %>
       </div>
       <div class="form-group">
-        <label>Price</label>
+        <label>席の価格（無料でもOKです）</label>
         <%= f.text_field :price, class: "form-control", autofocus: true, placeholder: "Enter price, FREE is okay:)", vaule: "100yen" %>
       </div>
       <div class="form-group">
-        <label>Seat image input</label>
+        <label>席の写真</label>
         <%= f.file_field :image, class: "form-control-file" %>
       </div>
       <div class="form-check">
         <label class="form-check-label">
-          <%= f.check_box :wifi, {:checked => false}, :on, :off %> Available WiFi
+          <%= f.check_box :wifi, {:checked => false}, :on, :off %> 利用可能なWiFiがある
         </label>
       </div>
       <div class="form-check">
         <label class="form-check-label">
-          <%= f.check_box :charge, {:checked => false}, :on, :off %> Available Charge
+          <%= f.check_box :charge, {:checked => false}, :on, :off %> 利用可能な電源がある
         </label>
       </div>
-      <%= f.submit "POST A SEAT", class: "btn submit" %>
+      <%= f.submit "席を販売する", class: "btn submit" %>
     <% end %>
   </div>
 </div>
