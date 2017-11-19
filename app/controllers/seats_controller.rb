@@ -1,5 +1,6 @@
 class SeatsController < ApplicationController
   before_action :set_seat, only: [:show, :destroy]
+
   def new
     if signed_in?
       @seat = current_user.seats.build
@@ -35,6 +36,6 @@ class SeatsController < ApplicationController
   end
 
   def create_params
-    params.require(:seat).permit(:id, :name, :url, :address, :price, :user_id, :image, :wifi, :charge)
+    params.require(:seat).permit(:id, :name, :url, :address, :price, :image, :wifi, :charge, user_attributes: [:id, :sms])
   end
 end
