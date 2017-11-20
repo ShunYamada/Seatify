@@ -8,14 +8,10 @@
     </div>
 
     <%= form_for(@seat) do |f| %>
-      <!--
-      <%= f.fields_for :user do |i| %>
-        <div class="form-group">
-          <label>利用可能なSMS <span class="required_mark">*</span></label>
-          <%= i.text_field :sms, class: "form-control", autofocus: true, placeholder: "Enter SMS(Phone Number)" %>
-        </div>
-      <% end %>
-      -->
+      <div class="form-group">
+        <label>利用可能なSMS <span class="required_mark">*</span></label>
+        <%= f.text_field :sms, value: current_user.sms, class: "form-control", placeholder: "Enter SMS(Phone Number)" %>
+      </div>
       <div class="form-group">
         <label>施設の名前 <span class="required_mark">*</span></label>
         <%= f.text_field :name, class: "form-control", autofocus: true, placeholder: "Enter place name" %>

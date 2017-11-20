@@ -36,6 +36,6 @@ class SeatsController < ApplicationController
   end
 
   def create_params
-    params.require(:seat).permit(:id, :name, :url, :address, :price, :image, :wifi, :charge)
+    params.require(:seat).permit(:id, :name, :url, :address, :price, :image, :wifi, :charge, :sms)
   end
 end

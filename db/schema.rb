@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171115012207) do
+ActiveRecord::Schema.define(version: 20171120150631) do
 
   create_table "seats", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20171115012207) do
     t.string "wifi"
     t.string "charge"
     t.boolean "close", default: false, null: false
+    t.string "sms"
     t.index ["user_id", "created_at"], name: "index_seats_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_seats_on_user_id"
   end
