@@ -2,7 +2,7 @@ class SeatsController < ApplicationController
   before_action :set_seat, only: [:show, :destroy]
 
   def new
-    @last_seat = current_user.seats.last
+    @last_seat = current_user.seats.first
     if signed_in?
       @seat = current_user.seats.build
     else

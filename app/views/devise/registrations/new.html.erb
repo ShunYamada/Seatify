@@ -26,25 +26,24 @@
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <div class="form-group">
-      <%= f.label :name %><br />
+      <label>お名前</label>
       <%= f.text_field :name, class: "form-control", autofocus: true, placeholder: "Enter full name" %>
     </div>
       <div class="form-group">
-        <%= f.label :email %><br />
+        <label>メールアドレス</label>
         <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: "Enter email" %>
       </div>
       <div class="form-group">
-        <%= f.label :password %><br />
+        <label>パスワード</label>
         <%= f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "Enter password" %>
       </div>
 
       <div class="form-group">
-        <%= f.label :password_confirmation %><br />
+        <label>パスワードの確認</label>
         <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off", placeholder: "Enter password confirmation" %>
       </div>
 
       <%= f.submit "SIGN UP", class: "btn submit" %>
-      <%= link_to "パスワードを忘れてしまった方はこちら", new_password_path(resource_name) %>
     <% end %>
   </div>
 </div>

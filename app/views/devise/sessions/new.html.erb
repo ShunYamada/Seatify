@@ -4,7 +4,7 @@
   <div class="register service">
     <div class="service_text">
       <h2>Sign in</h2>
-      <p>Seatifyで席を販売しましょう！めての方は<%= link_to "こちら", new_user_registration_path %>。</p>
+      <p>Seatifyで席を販売しましょう！初めての方は<%= link_to "こちら", new_user_registration_path %>。</p>
     </div>
 
     <div class="social">
@@ -28,11 +28,11 @@
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group">
-        <%= f.label :email %><br />
+        <label>メールアドレス</label>
         <%= f.email_field :email, class: "form-control", autofocus: true, placeholder: "Enter email" %>
       </div>
       <div class="form-group">
-        <%= f.label :password %><br />
+        <label>パスワード</label>
         <%= f.password_field :password, class: "form-control", autocomplete: "off", placeholder: "Enter password" %>
       </div>
       <% if devise_mapping.rememberable? -%>
@@ -41,8 +41,8 @@
           <%= f.label :remember_me %>
         </div>
       <% end -%>
-      <%= f.submit "SIGN IN", class: "btn submit" %>
-      <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+      <%= f.submit "メールアドレスでログイン", class: "btn submit" %>
+      <%= link_to "パスワードを忘れてしまった方はこちら", new_password_path(resource_name) %>
     <% end %>
   </div>
 </div>
