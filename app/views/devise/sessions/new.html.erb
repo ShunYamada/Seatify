@@ -4,20 +4,20 @@
   <div class="register service">
     <div class="service_text">
       <h2>Sign in</h2>
-      <p>Welcome back to Seatify. When you visit first time, please register <%= link_to "here", new_user_registration_path %></p>
+      <p>Seatifyで席を販売しましょう！めての方は<%= link_to "こちら", new_user_registration_path %>。</p>
     </div>
 
     <div class="social">
       <a href="#">
         <%= link_to user_facebook_omniauth_authorize_path do %>
           <div class="btn facebook">
-            SIGN IN with FACEBOOK
+            Facebookでログイン
           </div>
         <% end %>
       </a>
       <%= link_to user_twitter_omniauth_authorize_path do %>
         <div class="btn twitter">
-          SIGN IN with TWITTER
+          Twitterでログイン
         </div>
       <% end %>
     </div>

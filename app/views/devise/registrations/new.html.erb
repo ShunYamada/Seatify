@@ -3,21 +3,19 @@
 <div class="container">
   <div class="register service">
     <div class="service_text">
-      <h2>Sign up</h2>
-      <p>Welcome back to Seatify. When you visit first time, please register <a href="#">here.</p>
+      <h2>会員登録</h2>
+      <p>Seatifyへようこそ！</p>
     </div>
 
     <div class="social">
-      <a href="#">
-        <%= link_to user_facebook_omniauth_authorize_path do %>
-          <div class="btn facebook">
-            SIGN IN with FACEBOOK
-          </div>
-        <% end %>
-      </a>
+      <%= link_to user_facebook_omniauth_authorize_path do %>
+        <div class="btn facebook">
+          Facebookで登録する
+        </div>
+      <% end %>
       <%= link_to user_twitter_omniauth_authorize_path do %>
         <div class="btn twitter">
-          SIGN IN with TWITTER
+          Twitterで登録する
         </div>
       <% end %>
     </div>
@@ -46,7 +44,7 @@
       </div>
 
       <%= f.submit "SIGN UP", class: "btn submit" %>
-      <%= link_to "Forgot your password?", new_password_path(resource_name) %>
+      <%= link_to "パスワードを忘れてしまった方はこちら", new_password_path(resource_name) %>
     <% end %>
   </div>
 </div>
