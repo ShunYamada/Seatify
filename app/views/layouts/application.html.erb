@@ -24,7 +24,7 @@
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
     </div>
-    <div class="drawer drawer--left">
+    <div class="drawer drawer--right">
       <button type="button" class="drawer-toggle drawer-hamburger">
         <span class="sr-only">toggle navigation</span>
         <span class="drawer-hamburger-icon"></span>
@@ -59,13 +59,13 @@
         <div class="bar_become">
           <%= link_to new_user_session_path do %>
             <div class="btn signed_in bar_btn">
-              SIGNED IN
+              ログインする
             </div>
           <% end %>
 
           <%= link_to new_user_registration_path do %>
             <div class="btn signed_up bar_btn">
-              SIGNED UP
+              会員登録する
             </div>
           <% end %>
         </div>
