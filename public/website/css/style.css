@@ -183,6 +183,44 @@ form {
   background: #3366ff;
 }
 
+.bar_profile {
+  display: flex;
+  padding: 15px;
+  background: #444444;
+}
+.bar_icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.bar_text {
+  padding-left: 15px;
+}
+.bar_text li {
+  line-height: 30px;
+  color: #fff;
+}
+.bar_list {
+  padding: 0 15px;
+}
+.bar_list li {
+  line-height: 45px;
+}
+.bar_become {
+  padding: 15px;
+}
+.bar_btn {
+  margin: 5px 0;
+}
+.signed_in {
+  color: #3366ff;
+  border: 1px solid #3366ff;
+}
+.signed_up {
+  background: #3366ff;
+}
+
 @media screen and (max-width:600px) {
   .find_menu {
     flex-direction: column;

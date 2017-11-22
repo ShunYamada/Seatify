@@ -2,39 +2,93 @@
 <html lang="en">
   <head>
     <title><%= yield(:title) %> | Seatify - Get a seat instantly and socially</title>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= favicon_link_tag('favi.png') %>
     <%= favicon_link_tag 'iphone.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
 
     <%= show_meta_tags %>
-    <!-- Cacth -->
     <link rel="apple-touch-icon" href="./img/touch.png" />
     <link rel="icon" href="./img/favi.png" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- Basic CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <!-- Style CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/css/drawer.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.0/css/swiper.min.css" media="screen" />
   </head>
-  <body>  
+  <body>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
     </div>
+    <div class="drawer drawer--left">
+      <button type="button" class="drawer-toggle drawer-hamburger">
+        <span class="sr-only">toggle navigation</span>
+        <span class="drawer-hamburger-icon"></span>
+      </button>
+      <nav class="drawer-nav">
+        <% if user_signed_in? %>
+        <div class="bar_profile">
+          <div class="bar_icon">
+            <% if current_user.image.blank? %>
+              <%= image_tag "user.png" %>
+            <% else %>
+              <%= image_tag current_user.image %>
+            <% end %>
+          </div>
+          <div class="bar_text">
+            <ul>
+              <li><%= current_user.name %></li>
+              <li><%= link_to "プロフィールを見る", current_user %></li>
+            </ul>
+          </div>
+        </div>
+        <div class="bar_list">
+          <ul>
+            <li><%= link_to "プロフィールを編集する", edit_user_registration_path %></li>
+            <li><%= link_to "席を探す", root_path %></li>
+            <li><%= link_to "席を作る", new_seat_path %></li>
+            <li><%= link_to "ヘルプ", "https://www.facebook.com/shunsuke.yamada.7", target: "blank" %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+        <% else %>
+        <div class="bar_become">
+          <%= link_to new_user_session_path do %>
+            <div class="btn signed_in bar_btn">
+              SIGNED IN
+            </div>
+          <% end %>
+
+          <%= link_to new_user_registration_path do %>
+            <div class="btn signed_up bar_btn">
+              SIGNED UP
+            </div>
+          <% end %>
+        </div>
+        <div class="bar_list">
+          <ul>
+            <li><%= link_to "席を探す", root_path %></li>
+            <li><%= link_to "ヘルプ", "https://www.facebook.com/shunsuke.yamada.7", target: "blank" %></li>
+          </ul>
+        </div>
+        <% end %>
+      </nav>
+    </div>
     <%= yield %>
     <%= render 'layouts/footer' %>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".drawer").drawer();
+      });
+    </script>
   </body>
 </html>
