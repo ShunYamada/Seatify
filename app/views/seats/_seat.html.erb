@@ -44,8 +44,8 @@
     </a>
     <% end %>
     <% if seat.user === current_user %>
-    <div class="delete">
-      <%= link_to "delete", seat, method: :delete, data: { confirm: "You sure?" } %>
+    <div class="foot">
+      <%= link_to"編集する", edit_seat_path(id: seat.id) %> <%= link_to "削除する", seat, class: "delete", method: :delete, data: { confirm: "You sure?" } %>
     </div>
     <% end %>
   </div>

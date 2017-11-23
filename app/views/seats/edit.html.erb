@@ -1,9 +1,9 @@
-<% provide(:title, "Make a Seat") %>
+<% provide(:title, "Edit a Seat") %>
 <%= render 'layouts/header' %>
 <div class="container">
   <div class="register service">
     <div class="service_text">
-      <h2>席を作成する</h2>
+      <h2>席を編集する</h2>
       <p><span class="required_mark">*</span> は必須項目です。</p>
     </div>
 
@@ -15,35 +15,31 @@
       </div>
       <div class="form-group">
         <label>施設の名前 <span class="required_mark">*</span></label>
-        <%= f.text_field :name, value: @last_seat.name, class: "form-control", autofocus: true, placeholder: "Enter place name" %>
+        <%= f.text_field :name, value: @seat.name, class: "form-control", autofocus: true, placeholder: "Enter place name" %>
       </div>
       <div class="form-group">
         <label>施設のURL、食べログ </label>
-        <%= f.text_field :url, value: @last_seat.url, class: "form-control", autofocus: true, placeholder: "Enter tabelog or official URL" %>
+        <%= f.text_field :url, value: @seat.url, class: "form-control", autofocus: true, placeholder: "Enter tabelog or official URL" %>
       </div>
       <div class="form-group">
         <label>施設の住所</label>
-        <%= f.text_field :address, value: @last_seat.address, class: "form-control", autofocus: true, placeholder: "Enter place's address" %>
+        <%= f.text_field :address, value: @seat.address, class: "form-control", autofocus: true, placeholder: "Enter place's address" %>
       </div>
       <div class="form-group">
         <label>席の価格（無料でもOKです）</label>
-        <%= f.text_field :price, value: @last_seat.price, class: "form-control", autofocus: true, placeholder: "Enter price, FREE is okay:)", vaule: "100yen" %>
+        <%= f.text_field :price, value: @seat.price, class: "form-control", autofocus: true, placeholder: "Enter price, FREE is okay:)", vaule: "100yen" %>
       </div>
       <div class="form-group">
         <label>席の写真</label>
         <%= f.file_field :image, class: "form-control-file" %>
       </div>
       <div class="form-check">
-        <label class="form-check-label">
-          <%= f.check_box :wifi, {:checked => false}, :on, :off %> 利用可能なWiFiがある
+        <label>席を締め切る</label><br />
+        <label class="form-check-label ">
+          <%= f.check_box :close, {:checked => false}, :true, :false %>
         </label>
       </div>
-      <div class="form-check">
-        <label class="form-check-label">
-          <%= f.check_box :charge, {:checked => false}, :on, :off %> 利用可能な電源がある
-        </label>
-      </div>
-      <%= f.submit "席を販売する", class: "btn submit" %>
+      <%= f.submit "席を更新する", class: "btn submit" %>
     <% end %>
   </div>
 </div>

@@ -70,11 +70,11 @@ body {
   background: #dfdfdf;
   width: 100%;
 }
-.delete {
+.foot {
   margin-top: 15px;
   text-align: right;
 }
-.delete a {
+.delete {
   color: #fff;
   background: #ff3366;
   padding: 5px 10px;
@@ -229,6 +229,7 @@ form {
 .bar_profile {
   display: flex;
   padding: 15px;
+  padding-top: 30px;
   background: #444444;
 }
 .bar_icon img {
@@ -238,6 +239,7 @@ form {
   border-radius: 50%;
 }
 .bar_text {
+  padding-top: 15px;
   padding-left: 15px;
 }
 .bar_text li {
@@ -261,10 +263,14 @@ form {
 }
 .signed_in {
   color: #3366ff;
-  border: 1px solid #3366ff;
+  border: 1px solid #3366ff !important;
 }
 .signed_up {
   background: #3366ff;
+}
+.form_sms {
+  font-size: 12px;
+  margin-bottom: 10px;
 }
 
 @media screen and (max-width:600px) {

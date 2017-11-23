@@ -1,5 +1,6 @@
 class SeatsController < ApplicationController
-  before_action :set_seat, only: [:show, :destroy]
+  before_action :set_seat, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :destroy]
 
   def new
     @last_seat = current_user.seats.first
@@ -13,20 +14,33 @@ class SeatsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def create
    @seat = current_user.seats.create(create_params)
    if @seat.save
-     flash[:success] = "Seat created!"
+     flash[:success] = "席が作成されました!"
      redirect_to root_path
    else
-     flash[:alert] = "I'm sorry, error occured."
+     flash[:alert] = "すみません、エラーが発生しました!"
      redirect_to root_path
+   end
+ end
+
+ def update
+   if @seat.update_attributes(create_params)
+     flash[:success] = "席が更新されました!"
+     redirect_to root_path
+   else
+     flash[:alert] = "席の編集に失敗しました。"
+     render 'edit'
    end
  end
 
   def destroy
     @seat.destroy
-    flash[:success] = "Seat deleted."
+    flash[:success] = "席は削除されました!"
     redirect_to request.referrer || root_url
   end
 
@@ -37,6 +51,11 @@ class SeatsController < ApplicationController
   end
 
   def create_params
-    params.require(:seat).permit(:id, :name, :url, :address, :price, :image, :wifi, :charge, :sms)
+    params.require(:seat).permit(:id, :name, :url, :address, :price, :image, :wifi, :charge, :sms, :close)
+  end
+
+  def correct_user
+    @seat = current_user.seats.find_by(id: params[:id])
+    redirect_to root_url if @seat.nil?
   end
 end
