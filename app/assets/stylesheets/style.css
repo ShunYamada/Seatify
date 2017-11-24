@@ -145,10 +145,11 @@ body {
 }
 .spot {
   margin-bottom: 10px;
+  height: auto !important;
 }
 .spot a {
   color: #444444;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
 }
 .price {
