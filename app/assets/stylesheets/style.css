@@ -123,6 +123,9 @@ body {
   height: 50px;
   border-radius: 50%;
 }
+.info li:first-child {
+  font-weight: bold;
+}
 .info span {
   font-size: 12px;
 }
@@ -134,9 +137,24 @@ body {
   width: 15px;
   margin-right: 10px;
 }
-.price span {
+.opened {
+  color: #41a700;
+}
+.closed {
+  color: #666666;
+}
+.spot {
+  margin-bottom: 10px;
+}
+.spot a {
+  color: #444444;
+  font-size: 28px;
   font-weight: bold;
 }
+.price {
+  font-weight: bold;
+}
+
 .amenity span {
   font-size: 14px;
   color: #fff;
