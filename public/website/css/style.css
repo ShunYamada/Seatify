@@ -1,6 +1,12 @@
 body {
   color: #444444;
 }
+.desktop_view {
+  display: block;
+}
+.mobile_view {
+  display: none;
+}
 
 .header {
   background: #3366ff;
@@ -244,5 +250,11 @@ form {
   }
   .find_item {
     margin: 10px 0;
+  }
+  .desktop_view {
+    display: none;
+  }
+  .mobile_view {
+    display: block;
   }
 }

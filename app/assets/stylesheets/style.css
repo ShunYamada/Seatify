@@ -2,6 +2,13 @@ body {
   color: #444444;
 }
 
+.desktop_view {
+  display: block;
+}
+.mobile_view {
+  display: none;
+}
+
 .header {
   background: #3366ff;
   padding: 5px 0;
@@ -293,6 +300,13 @@ form {
 }
 
 @media screen and (max-width:600px) {
+  .desktop_view {
+    display: none;
+  }
+  .mobile_view {
+    display: block;
+  }
+
   .find_menu {
     flex-direction: column;
   }
