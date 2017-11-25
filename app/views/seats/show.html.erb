@@ -1,0 +1,101 @@
+<% provide(:title, "Make a Seat") %>
+<%= render 'layouts/header' %>
+<div class="container">
+  <div class="photo">
+    <% if @seat.image? %>
+      <%= image_tag @seat.image %>
+    <% end %>
+  </div>
+  <div class="seat_body">
+    <div class="seat_title">
+      <h2><%= @seat.name %></h2>
+    </div>
+    <div class="seat_head">
+      <ul class="info">
+        <li class="date list">
+          <% if @seat.close == true %>
+          <%= image_tag "closed.png" %><%= @seat.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+          <% else %>
+          <%= image_tag "opened.png" %><%= @seat.hour %>まで <span class="opened">営業中</span>
+          <% end %>
+        </li>
+        <li><%= link_to @seat.user.name, @seat.user %>さんがホストです</li>
+      </ul>
+      <div class="icon">
+        <% if @seat.user.image.blank? %>
+          <%= link_to image_tag("user.png"), @seat.user %>
+        <% else %>
+          <%= link_to @seat.user do %>
+            <%= image_tag @seat.user.image %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="seat_line"></div>
+
+    <div class="seat_message seat_box">
+      <p><%= @seat.user.name %>さんからのメッセージ</p>
+      <div class="message_box">
+        <% if @seat.user.description.blank? %>
+        こんにちは！<%= @seat.user.name %>です！Seatifyがいろいろな方と出会えるキッカケとなればいいなと思って始めました。
+        気軽に席をリクエストしてくださいね♪
+        <% else %>
+        <%= @seat.user.description %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="seat_line"></div>
+
+    <div class="seat_amenity seat_box">
+      <p>Amenity</p>
+      <div class="amenity list">
+        <span class="wifi <%= @seat.wifi %>">wifi</span><span class="charge <%= @seat.charge %>">電源</span>
+      </div>
+    </div>
+
+    <div class="seat_line"></div>
+
+    <div class="seat_map seat_box">
+      <p>Address</p>
+      <div class="address list">
+        <%= image_tag "place.png" %><%= @seat.address %>
+      </div>
+      <div id="map" style='width: 100%; height: 135px;'></div>
+      <%= render 'shared/map' %>
+    </div>
+
+    <div class="item_btn">
+      <% if @seat.close === true %>
+      <div class="btn closed_btn">
+        販売終了
+      </div>
+      <% else %>
+      <a href="sms:<%= @seat.sms %>" class="mobile_view">
+        <div class="btn request_btn">
+          <% if @seat.price.blank? %>
+          <span class="price">無料</span>で席を予約する
+          <% else %>
+          <span class="price"><%= @seat.price %></span>で席を予約する
+          <% end %>
+        </div>
+      </a>
+      <a href="#" class="desktop_view" onclick="return confirm('スマートフォンサイトから予約してください！')">
+        <div class="btn request_btn">
+          <% if @seat.price.blank? %>
+          <span class="price">無料</span>で席を予約する
+          <% else %>
+          <span class="price"><%= seat.price %></span>で席を予約する
+          <% end %>
+        </div>
+      </a>
+      <% end %>
+      <% if @seat.user === current_user %>
+      <div class="foot">
+        <%= link_to"編集する", edit_seat_path(id: @seat.id) %> <%= link_to "削除する", @seat, class: "delete", method: :delete, data: { confirm: "You sure?" } %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

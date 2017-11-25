@@ -2,9 +2,11 @@
   <div class="item_head">
     <div class="icon">
       <% if seat.user.image.blank? %>
-        <%= image_tag "user.png" %>
+        <%= link_to image_tag("user.png"), seat.user %>
       <% else %>
-        <%= image_tag seat.user.image %>
+        <%= link_to seat.user do %>
+          <%= image_tag seat.user.image %>
+        <% end %>
       <% end %>
     </div>
     <ul class="info">
@@ -20,7 +22,7 @@
   </div>
   <div class="item_body">
     <div class="spot list">
-      <%= link_to seat.name, seat.url, target: "_blank" %>
+      <%= link_to seat.name, seat %>
     </div>
     <div class="address list">
       <%= image_tag "place.png" %><%= seat.address %>

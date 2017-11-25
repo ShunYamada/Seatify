@@ -18,6 +18,7 @@ gem 'rails_admin'
 gem 'cancan'
 gem 'fog'
 gem 'meta-tags'
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
