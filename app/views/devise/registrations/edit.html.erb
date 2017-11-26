@@ -36,6 +36,7 @@
         <%= f.text_area :description, class: "form-control", autofocus: true, placeholder: "Enter description" %>
       </div>
       <div class="form-check">
+        <label>レンタルできるもの</label>
         <label class="form-check-label">
           <%= f.check_box :iphone, {:checked => false}, :on, :off %> 貸出可能なiPhone充電器がある
         </label>

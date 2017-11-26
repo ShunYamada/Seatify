@@ -322,6 +322,9 @@ form {
 .seat_body {
   padding-bottom: 15px;
 }
+.rental {
+  height: 100px;
+}
 
 @media screen and (max-width:600px) {
   .desktop_view {
