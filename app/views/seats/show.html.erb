@@ -49,7 +49,7 @@
     <div class="seat_line"></div>
 
     <div class="seat_amenity seat_box">
-      <p>Amenity</p>
+      <p>席の設備</p>
       <div class="amenity list">
         <span class="wifi <%= @seat.wifi %>">wifi</span><span class="charge <%= @seat.charge %>">電源</span>
       </div>
@@ -58,11 +58,11 @@
     <div class="seat_line"></div>
 
     <div class="seat_map seat_box">
-      <p>Address</p>
+      <p>住所</p>
       <div class="address list">
         <%= image_tag "place.png" %><%= @seat.address %>
       </div>
-      <div id="map" style='width: 100%; height: 135px;'></div>
+      <div id="map" style='width: 100%; height: 240px;'></div>
       <%= render 'shared/map' %>
     </div>
 
@@ -86,7 +86,7 @@
           <% if @seat.price.blank? %>
           <span class="price">無料</span>で席を予約する
           <% else %>
-          <span class="price"><%= seat.price %></span>で席を予約する
+          <span class="price"><%= @seat.price %></span>で席を予約する
           <% end %>
         </div>
       </a>
