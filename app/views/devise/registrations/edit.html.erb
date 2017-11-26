@@ -35,6 +35,21 @@
         <label>簡単な自己紹介</label>
         <%= f.text_area :description, class: "form-control", autofocus: true, placeholder: "Enter description" %>
       </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <%= f.check_box :iphone, {:checked => false}, :on, :off %> 貸出可能なiPhone充電器がある
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <%= f.check_box :android, {:checked => false}, :on, :off %> 貸出可能なAndroid充電器がある
+        </label>
+      </div>
+      <div class="form-check">
+        <label class="form-check-label">
+          <%= f.check_box :macbook, {:checked => false}, :on, :off %> 利用可能なMacBookPro充電器がある
+        </label>
+      </div>
       <%= f.submit "更新する", class: "btn submit" %>
     <% end %>
   </div>
