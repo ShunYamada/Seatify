@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations',
     :sessions => 'users/sessions'
   }
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      resources :reviews
+    end
+  end
   resources :seats
 end

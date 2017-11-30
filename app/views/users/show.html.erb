@@ -27,14 +27,50 @@
   <!-- /profile -->
 
   <div class="get_seat">
-    <h1>Get <%= @user.name %>'s seat!</h1>
-
-    <% if @user.seats.any? %>
-    <div class="contents">
-      <%= render @seats %>
-    </div>
-    <% end %>
+    <ul class="tab">
+      <li class="select">シート</li>
+      <li>レビュー</li>
+    </ul>
+    <ul class="content">
+      <li class="content_item">
+        <% if @user.seats.any? %>
+        <div class="contents">
+          <%= render @seats %>
+        </div>
+        <% end %>
+      </li>
+      <li class="hide content_item">
+        <ul class="review_box">
+          <li class="review_item">
+            <div class="head_review">
+              <div class="icon_review">
+                <%= image_tag "shun_icon.png" %>
+              </div>
+              <ul>
+                <li><span class="rate rate-3"></span></li>
+                <li><a href="#">Shun Yamada</a></li>
+              </ul>
+            </div>
+            <div class="body_review">
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
   </div>
-  <!-- /get_seat -->
 </div>
-<!-- /container -->
+
+<script>
+$(function() {
+	$('.tab li').click(function() {
+		var index = $('.tab li').index(this);
+		$('.content .content_item').css('display','none');
+		$('.content .content_item').eq(index).css('display','block');
+		$('.tab li').removeClass('select');
+		$(this).addClass('select')
+	});
+});
+</script>

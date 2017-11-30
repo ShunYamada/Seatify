@@ -309,10 +309,13 @@ form {
 .seat_head {
   display: flex;
   justify-content: space-between;
-  margin: 30px 0 15px 0;
+  margin: 30px 0 5px 0;
 }
 .seat_box {
   margin: 15px 0;
+}
+.seat_box img {
+  width: 18px;
 }
 .message_box {
   background: #f5f5f5;
@@ -326,6 +329,93 @@ form {
   height: 100px;
 }
 
+.rate_box {
+  margin-top: 5px;
+}
+.rate {
+  position: relative;
+  width: 100px;
+  display: inline-block;
+  font-size: 20px !important;
+  vertical-align: top;
+}
+.rate:before, .rate:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '★★★★★';
+  display: inline-block;
+  height: 25px;
+}
+.rate:before {
+  color: #eee;
+}
+.rate:after {
+  color: #5b84ff;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.rate-0:after{width: 0;}
+.rate-1:after{width: 15px;}
+.rate-2:after{width: 35px;}
+.rate-3:after{width: 50px;}
+.rate-4:after{width: 70px;}
+.rate-5:after{width: 100px;}
+
+.average {
+  font-size: 18px !important;
+  color: #5b84ff;
+  font-weight: bold;
+}
+
+.head_review {
+  display: flex;
+}
+.head_review li {
+  height: 25px;
+}
+.head_review li a {
+  color: #666666;
+}
+.icon_review {
+  margin-right: 15px;
+}
+.icon_review img {
+  width: 50px;
+  border-radius: 50%;
+}
+.body_review {
+  padding-top: 15px;
+  font-size: 14px;
+}
+.seat_btn {
+  display: flex;
+}
+.review_btn {
+  background: #666666;
+}
+.review_item {
+  padding: 15px 0;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.tab li {
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.select {
+  border-bottom: 3px solid #3366ff;
+}
+.hide {
+  display: none;
+}
+
 @media screen and (max-width:600px) {
   .desktop_view {
     display: none;
@@ -333,7 +423,6 @@ form {
   .mobile_view {
     display: block;
   }
-
   .find_menu {
     flex-direction: column;
   }

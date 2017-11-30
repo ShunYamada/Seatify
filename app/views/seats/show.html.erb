@@ -1,4 +1,4 @@
-<% provide(:title, "Make a Seat") %>
+<% provide(:title, @seat.name + 'by' + @seat.user.name) %>
 <%= render 'layouts/header' %>
 <div class="container">
   <div class="photo">
@@ -20,6 +20,9 @@
           <% end %>
         </li>
         <li><%= link_to @seat.user.name, @seat.user %>さんがホストです</li>
+        <li class="rate_box">
+          <span class="rate rate-5 rate_item"></span> <span class="average">5.0</span>
+        </li>
       </ul>
       <div class="icon">
         <% if @seat.user.image.blank? %>
@@ -35,7 +38,7 @@
     <div class="seat_line"></div>
 
     <div class="seat_message seat_box">
-      <p><%= @seat.user.name %>さんからのメッセージ</p>
+      <p><%= image_tag "chat.png" %> <%= @seat.user.name %>さんからのメッセージ</p>
       <div class="message_box">
         <% if @seat.user.description.blank? %>
         こんにちは！<%= @seat.user.name %>です！Seatifyがいろいろな方と出会えるキッカケとなればいいなと思って始めました。
@@ -49,7 +52,7 @@
     <div class="seat_line"></div>
 
     <div class="seat_amenity seat_box">
-      <p>席の設備</p>
+      <p><%= image_tag "table.png" %> 席の設備</p>
       <div class="amenity list">
         <span class="wifi <%= @seat.wifi %>">wifi</span><span class="charge <%= @seat.charge %>">電源</span>
       </div>
@@ -58,7 +61,7 @@
     <div class="seat_line"></div>
 
     <div class="seat_amenity seat_box rental">
-      <p>ホストからレンタルできるもの</p>
+      <p><%= image_tag "bag.png" %> ホストからレンタルできるもの</p>
       <div class="amenity list">
         <span class="iphone <%= @seat.user.iphone %>">iphone充電器</span><span class="android <%= @seat.user.android %>">Android充電器</span><span class="macbook <%= @seat.user.macbook %>">MacBookPro充電器</span>
       </div>
@@ -67,12 +70,42 @@
     <div class="seat_line"></div>
 
     <div class="seat_map seat_box">
-      <p>住所</p>
+      <p><%= image_tag "place.png" %> 住所</p>
       <div class="address list">
-        <%= image_tag "place.png" %><%= @seat.address %>
+        <%= @seat.address %>
       </div>
       <div id="map" style='width: 100%; height: 240px;'></div>
       <%= render 'shared/map' %>
+    </div>
+
+    <div class="seat_line"></div>
+
+    <div class="seat_review seat_box">
+      <p><%= image_tag "review.png" %> 10件のレビューを見る</p>
+      <div class="review">
+        <ul class="review_box">
+          <li class="review_item">
+            <div class="head_review">
+              <div class="icon_review">
+                <%= image_tag "shun_icon.png" %>
+              </div>
+              <ul>
+                <li><span class="rate rate-3"></span></li>
+                <li><a href="#">Shun Yamada</a></li>
+              </ul>
+            </div>
+            <div class="body_review">
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="btn review_btn">
+      この席のレビューを書く
     </div>
 
     <div class="item_btn">
