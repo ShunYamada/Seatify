@@ -3,11 +3,11 @@
 one:
   rate: 1
   content: MyText
-  user: one
-  reviewed: one
+  user_id: 1
+  reviewed_id: 1
 
 two:
   rate: 1
   content: MyText
-  user: two
-  reviewed: two
+  user_id: 1
+  reviewed_id: 1

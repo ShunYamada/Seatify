@@ -41,22 +41,7 @@
       </li>
       <li class="hide content_item">
         <ul class="review_box">
-          <li class="review_item">
-            <div class="head_review">
-              <div class="icon_review">
-                <%= image_tag "shun_icon.png" %>
-              </div>
-              <ul>
-                <li><span class="rate rate-3"></span></li>
-                <li><a href="#">Shun Yamada</a></li>
-              </ul>
-            </div>
-            <div class="body_review">
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-              ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-            </div>
-          </li>
+          <%= render @reviews %>
         </ul>
       </li>
     </ul>
