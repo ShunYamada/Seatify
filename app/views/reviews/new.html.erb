@@ -2,24 +2,29 @@
 <%= render 'layouts/header' %>
 <div class="container">
   <div class="register service">
-    <div class="service_text">
-      <h2>レビューを登録する</h2>
+    <div class="service_text post">
+      <h2><%= @user.name %>さんのレビューを登録</h2>
     </div>
 
     <%= form_for(@review) do |f| %>
-      <%= f.hidden_field :user_id, value: @user.id %>
-      <div class="form-group">
-        <label>5段階評価 </label>
-        <div class="form-control">
-          <div id="star"></div>
-          <%= f.hidden_field :rate %>
+      <%= f.hidden_field :reviewed_id, value: @user.id %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <div class="rate_form">
+        <div class="form-group">
+          <label>5段階評価 </label>
+          <div class="form-control raty">
+            <div id="star"></div>
+            <%= f.hidden_field :rate %>
+          </div>
         </div>
-      </div>
-      <div class="form-list">
-        <label>レビュー内容 <space class="required"></label>
-        <%= f.text_area :content, class: "form-control", placeholder: "例) 席を確保してくれるだけでなく、iPhoneの充電器を貸してもらえました。オススメしてくれたコールドブリューを注文してみたら、さっぱりしていて仕事捗りました。基本的にはお互いもくもく仕事をしていましたが、プログラミングができるので分からないことがあれば教えてくれる親切な方です。" %>
+        <div class="form-list">
+          <label>レビュー内容 <space class="required"></label>
+          <%= f.text_area :content, class: "form-control raty_content", placeholder: "例) 席を確保してくれるだけでなく、iPhoneの充電器を貸してもらえました。オススメしてくれたコールドブリューを注文してみたら、さっぱりしていて仕事捗りました。基本的にはお互いもくもく仕事をしていましたが、プログラミングができるので分からないことがあれば教えてくれる親切な方です。" %>
+        </div>
       </div>
       <%= f.submit "レビューを登録する", class: "btn submit" %>
     <% end %>
   </div>
 </div>
+
+<%= render 'shared/rate' %>

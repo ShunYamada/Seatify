@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable and :omniauthable
   has_many :seats, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
@@ -34,6 +35,7 @@ class User < ApplicationRecord
        User.create_unique_string + "@example.com"
      end
    end
+
 
    private
 

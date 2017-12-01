@@ -1,0 +1,12 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raty/2.8.0/jquery.raty.min.js"></script>
+<script>
+$('#star').raty({
+  size     : 10,
+  starOff: '<%= '/img/off.png' %>',
+  starOn : '<%= '/img/on.png' %>',
+  scoreName: 'review[rate]',
+  click: function(score, evt) {
+    $('#review_rate').val(score);
+  }
+});
+</script>

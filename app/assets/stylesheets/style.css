@@ -362,6 +362,21 @@ form {
 .rate-4:after{width: 70px;}
 .rate-5:after{width: 100px;}
 
+.rate_form {
+  padding: 30px 0;
+}
+.raty {
+  border: none !important;
+}
+.raty_content {
+  border-radius: 0 !important;
+  font-size: 14px !important;
+  height: 160px;
+}
+#star img {
+  width: 25px;
+}
+
 .average {
   font-size: 18px !important;
   color: #5b84ff;
@@ -414,6 +429,9 @@ form {
 }
 .hide {
   display: none;
+}
+.post h2 {
+  font-size: 18px;
 }
 
 @media screen and (max-width:600px) {

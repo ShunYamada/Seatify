@@ -19,6 +19,7 @@ class ReviewsController < ApplicationController
     else
       flash[:alert] = "レビューの登録に失敗しました。"
       render 'new'
+    end
   end
 
   def edit
@@ -38,5 +39,11 @@ class ReviewsController < ApplicationController
     @review.destroy
     flash[:success] = "レビューが削除されました。"
     redirect_to request.referrer || root_url
+  end
+
+  private
+
+  def create_params
+    params.require(:id, :rate, :content, :user_id, :reviewed_id)
   end
 end
