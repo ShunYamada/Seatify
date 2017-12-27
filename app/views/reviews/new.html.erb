@@ -8,7 +8,7 @@
 
     <%= form_for(@review) do |f| %>
       <%= f.hidden_field :reviewed_id, value: @user.id %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :reviewer_id, value: current_user.id %>
       <div class="rate_form">
         <div class="form-group">
           <label>5段階評価 </label>

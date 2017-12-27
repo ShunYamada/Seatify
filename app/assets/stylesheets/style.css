@@ -412,6 +412,10 @@ form {
 .review_item {
   padding: 15px 0;
 }
+.review_box p {
+  padding: 50px 0;
+  text-align: center;
+}
 
 .tab {
   display: flex;

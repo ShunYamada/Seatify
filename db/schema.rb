@@ -10,18 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171201040436) do
+ActiveRecord::Schema.define(version: 20171203065256) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rate"
     t.text "content"
-    t.integer "user_id"
+    t.integer "reviewer_id"
     t.integer "reviewed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["reviewed_id", "created_at"], name: "index_reviews_on_reviewed_id_and_created_at"
     t.index ["reviewed_id"], name: "index_reviews_on_reviewed_id"
-    t.index ["user_id", "reviewed_id"], name: "index_reviews_on_user_id_and_reviewed_id", unique: true
-    t.index ["user_id"], name: "index_reviews_on_user_id"
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
+    t.index [nil, "created_at"], name: "index_reviews_on_user_id_and_created_at"
   end
 
   create_table "seats", force: :cascade do |t|

@@ -5,14 +5,14 @@ class ReviewsController < ApplicationController
   def new
     @user = User.find(params[:id])
     if signed_in?
-      @review = current_user.reviews.build
+      @review = current_user.reviews_of_reviewer.build
     else
       redirect_to new_user_registration_path
     end
   end
 
   def create
-    @review = current_user.reviews.create(create_params)
+    @review = current_user.reviews_of_reviewer.create(create_params)
     if @review.save
       flash[:success] = "レビューが登録されました！"
       redirect_to root_path
@@ -44,6 +44,6 @@ class ReviewsController < ApplicationController
   private
 
   def create_params
-    params.require(:review).permit(:id, :rate, :content, :user_id, :reviewed_id)
+    params.require(:review).permit(:id, :rate, :content, :reviewer_id, :reviewed_id)
   end
 end
