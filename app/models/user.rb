@@ -2,8 +2,6 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable and :omniauthable
   has_many :seats, dependent: :destroy
-  has_many :reviews_of_reviewer, class_name: "Review", foreign_key: :reviewer_id
-  has_many :reviews_of_reviewed, class_name: "Review", foreign_key: :reviewed_id
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
