@@ -39,6 +39,12 @@
         <label>席の写真 <span class="required_mark">*</span></label>
         <%= f.file_field :image, class: "form-control-file" %>
       </div>
+      <div class="form-check">
+       <label>席を締め切る</label><br />
+       <label class="form-check-label ">
+         <%= f.check_box :close, {:checked => false}, :true, :false %>
+       </label>
+      </div>
       <div class="form-group">
         <label>どんな人と相席したいか</label>
         <%= f.text_area :comment, class: "form-control", rows: 5 %>
