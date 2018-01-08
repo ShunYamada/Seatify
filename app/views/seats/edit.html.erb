@@ -9,50 +9,39 @@
 
     <%= form_for(@seat) do |f| %>
       <div class="form-group">
-        <label>利用可能なSMS <span class="required_mark">*</span></label>
-        <div class="form_sms">ゲストとのやり取りを行なうときに利用します。</div>
-        <%= f.text_field :sms, value: current_user.sms, class: "form-control", placeholder: "Enter SMS(Phone Number)" %>
+        <label>席の名前 <span class="required_mark">*</span></label>
+        <% if @last_seat.blank? %>
+        <%= f.text_field :name, class: "form-control", autofocus: true, placeholder: "例) Rubyもくもく" %>
+        <% else %>
+        <%= f.text_field :name, value: @last_seat.name, class: "form-control", autofocus: true, placeholder: "例) Rubyもくもく" %>
+        <% end %>
       </div>
       <div class="form-group">
-        <label>施設の名前 <span class="required_mark">*</span></label>
-        <%= f.text_field :name, value: @seat.name, class: "form-control", autofocus: true, placeholder: "Enter place name" %>
-      </div>
-      <div class="form-group">
-        <label>席の販売時間</label>
+        <label>席の募集時間(いつ頃までいるのか) <span class="required_mark">*</span></label>
         <%= f.select :hour, {"9:00 AM" => "9:00 AM", "9:30 AM" => "9:30 AM", "10:00 AM" => "10:00 AM",
             "10:30 AM" => "10:30 AM", "11:00 AM" => "11:00 AM", "11:30 AM" => "11:30 AM", "12:00 PM" => "12:00 PM",
             "12:30 PM" => "12:30 PM", "13:00 PM" => "13:00 PM", "13:30 PM" => "13:30 PM", "14:00 PM" => "14:00 PM",
             "14:30 PM" => "14:30 PM", "15:00 PM" => "15:00 PM", "15:30 PM" => "15:30 PM", "16:00 PM" => "16:00 PM",
             "16:30 PM" => "16:30 PM", "17:00 PM" => "17:00 PM", "17:30 PM" => "17:30 PM", "18:00 PM" => "18:00 PM",
             "18:30 PM" => "18:30 PM", "19:00 PM" => "19:00 PM", "19:30 PM" => "19:30 PM", "20:00 PM" => "20:00 PM",
-            "20:30 PM" => "20:30 PM", "21:00 PM" => "21:00 PM", "21:30 PM" => "21:30 PM", "22:00 PM" => "22:00 PM",
-            "22:30 PM" => "22:30 PM", "23:00 PM" => "23:00 PM", "23:30 PM" => "23:30 PM", "24:00 PM" => "24:00 PM",
-            "24:30 PM" => "24:30 PM", "25:00 PM" => "25:00 PM"},
+            "20:30 PM" => "20:30 PM", "21:00 PM" => "21:00 PM" },
             {}, {class: 'form-control'} %>
       </div>
-      <!--
       <div class="form-group">
-        <label>施設のURL、食べログ </label>
-        <%= f.text_field :url, value: @seat.url, class: "form-control", autofocus: true, placeholder: "Enter tabelog or official URL" %>
-      </div>
-      -->
-      <div class="form-group">
-        <label>施設の住所</label>
-        <%= f.text_field :address, value: @seat.address, class: "form-control", autofocus: true, placeholder: "Enter place's address" %>
+        <label>席の位置</label>
+        <% if @last_seat.blank? %>
+        <%= f.text_field :address, class: "form-control", autofocus: true, placeholder: "例) 受付の前の席" %>
+        <% else %>
+        <%= f.text_field :address, value: @last_seat.address, class: "form-control", autofocus: true, placeholder: "例) 受付の前の席" %>
+        <% end %>
       </div>
       <div class="form-group">
-        <label>席の価格（無料でもOKです）</label>
-        <%= f.text_field :price, value: @seat.price, class: "form-control", autofocus: true, placeholder: "Enter price, FREE is okay:)", vaule: "100yen" %>
-      </div>
-      <div class="form-group">
-        <label>席の写真</label>
+        <label>席の写真 <span class="required_mark">*</span></label>
         <%= f.file_field :image, class: "form-control-file" %>
       </div>
-      <div class="form-check">
-        <label>席を締め切る</label><br />
-        <label class="form-check-label ">
-          <%= f.check_box :close, {:checked => false}, :true, :false %>
-        </label>
+      <div class="form-group">
+        <label>どんな人と相席したいか</label>
+        <%= f.text_area :comment, class: "form-control", rows: 5 %>
       </div>
       <%= f.submit "席を更新する", class: "btn submit" %>
     <% end %>

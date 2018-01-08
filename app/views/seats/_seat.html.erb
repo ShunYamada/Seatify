@@ -15,7 +15,7 @@
         <% if seat.close == true %>
         <%= image_tag "closed.png" %><%= seat.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
         <% else %>
-        <%= image_tag "opened.png" %><%= seat.hour %>まで <span class="opened">営業中</span>
+        <%= image_tag "opened.png" %><%= seat.hour %>まで <span class="opened">募集中</span>
         <% end %>
       </li>
     </ul>
@@ -27,9 +27,6 @@
     <div class="address list">
       <%= image_tag "place.png" %><%= seat.address %>
     </div>
-    <div class="amenity list">
-      <span class="wifi <%= seat.wifi %>">wifi</span><span class="charge <%= seat.charge %>">電源</span>
-    </div>
     <div class="photo">
       <% if seat.image? %>
         <%= image_tag seat.image %>
@@ -39,27 +36,14 @@
   <div class="item_btn">
     <% if seat.close === true %>
     <div class="btn closed_btn">
-      販売終了
+      募集は終了しました
     </div>
     <% else %>
-    <a href="sms:<%= seat.sms %>" class="mobile_view">
+    <%= link_to seat do %>
       <div class="btn request_btn">
-        <% if seat.price.blank? %>
-        <span class="price">無料</span>で席を予約する
-        <% else %>
-        <span class="price"><%= seat.price %></span>で席を予約する
-        <% end %>
+        相席の詳細をみる
       </div>
-    </a>
-    <a href="#" class="desktop_view" onclick="return confirm('スマートフォンサイトから予約してください！')">
-      <div class="btn request_btn">
-        <% if seat.price.blank? %>
-        <span class="price">無料</span>で席を予約する
-        <% else %>
-        <span class="price"><%= seat.price %></span>で席を予約する
-        <% end %>
-      </div>
-    </a>
+    <% end %>
     <% end %>
     <% if seat.user === current_user %>
     <div class="foot">

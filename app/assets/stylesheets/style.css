@@ -10,7 +10,7 @@ body {
 }
 
 .header {
-  background: #3366ff;
+  background: #d20a0a;
   padding: 5px 0;
 }
 .header a {
@@ -21,14 +21,14 @@ body {
 
 .home_header {
   text-align: center;
-  border-top: 5px solid #3366ff;
+  border-top: 5px solid #d20a0a;
   padding: 15px 0 10px 0;
 }
 .home_header h1 {
   font-size: 32px;
 }
 .home_header p, .find_item p {
-  color: #666666;
+  color: #444444;
 }
 .btn {
   color: #fff;
@@ -51,24 +51,24 @@ body {
   width: 100%;
 }
 .give_seat {
-  background: #5b84ff;
+  background: #d20a0a;
   width: 100%;
   margin-bottom: 15px;
 }
 .show_profile {
-  color: #5b84ff;
-  border: 2px solid #5b84ff !important;
+  color: #d20a0a;
+  border: 2px solid #d20a0a !important;
 }
 .edit_btn {
   margin-top: 10px;
   padding: 7px 0;
-  background: #666666;
+  background: #444444;
   width: 100%;
 }
 .request_btn {
   margin-top: 10px;
   padding: 7px 0;
-  background: #5b84ff;
+  background: #d20a0a;
   width: 100%;
 }
 .closed_btn {
@@ -107,7 +107,7 @@ body {
   color: #444444;
 }
 .info li:nth-child(2) a {
-  color: #666666;
+  color: #444444;
 }
 .contents {
   margin: 30px 0;
@@ -148,7 +148,7 @@ body {
   color: #41a700;
 }
 .closed {
-  color: #666666;
+  color: #444444;
 }
 .spot {
   margin-bottom: 10px;
@@ -171,7 +171,7 @@ body {
   border-radius: 5px;
 }
 .on {
-  background: #3366ff;
+  background: #d20a0a;
 }
 .off {
   background: #dfdfdf;
@@ -201,7 +201,7 @@ body {
   font-size: 24px;
 }
 .basic_info p {
-  color: #666666;
+  color: #444444;
 }
 
 .service {
@@ -209,7 +209,7 @@ body {
   text-align: center;
 }
 .service_text p {
-  color: #666666;
+  color: #444444;
 }
 
 .social .btn:first-child {
@@ -227,7 +227,7 @@ form {
   margin: 15px 0;
 }
 .submit {
-  background: #3366ff;
+  background: #d20a0a;
 }
 
 .alert {
@@ -288,11 +288,11 @@ form {
   margin: 5px 0;
 }
 .signed_in {
-  color: #3366ff;
-  border: 1px solid #3366ff !important;
+  color: #d20a0a;
+  border: 1px solid #d20a0a !important;
 }
 .signed_up {
-  background: #3366ff;
+  background: #d20a0a;
 }
 .form_sms {
   font-size: 12px;
@@ -351,7 +351,7 @@ form {
   color: #eee;
 }
 .rate:after {
-  color: #5b84ff;
+  color: #d20a0a;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -379,7 +379,7 @@ form {
 
 .average {
   font-size: 18px !important;
-  color: #5b84ff;
+  color: #d20a0a;
   font-weight: bold;
 }
 
@@ -390,7 +390,7 @@ form {
   height: 25px;
 }
 .head_review li a {
-  color: #666666;
+  color: #444444;
 }
 .icon_review {
   margin-right: 15px;
@@ -407,7 +407,7 @@ form {
   display: flex;
 }
 .review_btn {
-  background: #666666;
+  background: #444444;
 }
 .review_item {
   padding: 15px 0;
@@ -429,13 +429,17 @@ form {
   padding-bottom: 10px;
 }
 .select {
-  border-bottom: 3px solid #3366ff;
+  border-bottom: 3px solid #d20a0a;
 }
 .hide {
   display: none;
 }
 .post h2 {
   font-size: 18px;
+}
+.title_logo img {
+  width: 60px;
+  padding: 30px 0;
 }
 
 @media screen and (max-width:600px) {
